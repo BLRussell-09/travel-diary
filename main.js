@@ -45,8 +45,8 @@ const buildDomString = (locationArray) => {
     domString += `<div class="card">`;
     domString +=  `<h1>${location.location}</h1>`;
     domString +=  `<img src="${location.images}" alt=""></br>`;
-    domString +=  `<p>${location.desc}</p>`;
-    domString +=  `<input id="input" class="input"></input></br>`;
+    domString +=  `<p class="description">${location.desc}</p>`;
+    domString +=  `<textarea id="input" class="input"></textarea></br>`;
     domString +=  `<button class="card-button">Submit</button>`;
     domString += `</div>`;
   });
@@ -64,9 +64,12 @@ for (let idx = 0; idx < allTheButtons.length; idx++){
     domString += `<div class = "card">`;
     domString += `<h1>${places[idx].location}</h1>`;
     domString += `<textarea class = "output">${outputter[idx].value}</textarea>`;
-    domString += `<span class = "time">${rightNow}</span>`;
+    domString += `<span class = "time">${rightNow}</span></br>`;
+    domString +=  `<button class="del-button">Delete</button>`;
     domString += `</div>`;
     domArray.push(domString);
    printToDom(domArray, 'submitted-cards');
+
   })
 }
+
