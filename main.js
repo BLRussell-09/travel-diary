@@ -32,6 +32,8 @@ const places = [
   },
 ]
 
+const rightNow = new Date();
+
 const printToDom = (domString, divId) => {
   const printTo = document.getElementById(divId);
   printTo.innerHTML = domString;
@@ -44,11 +46,27 @@ const buildDomString = (locationArray) => {
     domString +=  `<h1>${location.location}</h1>`;
     domString +=  `<img src="${location.images}" alt=""></br>`;
     domString +=  `<p>${location.desc}</p>`;
-    domString +=  `<input></input></br>`;
+    domString +=  `<input id="input" class="input"></input></br>`;
     domString +=  `<button class="card-button">Submit</button>`;
     domString += `</div>`;
   });
   printToDom(domString, 'location-cards');
 }
 
+
 buildDomString(places);
+let outputter = document.getElementsByClassName("input")
+let domArray = [];
+const allTheButtons = document.getElementsByClassName('card-button')
+for (let idx = 0; idx < allTheButtons.length; idx++){
+  allTheButtons[idx].addEventListener('click', (e) => {
+    let domString = '';
+    domString += `<div class = "card">`;
+    domString += `<h1>${places[idx].location}</h1>`;
+    domString += `<textarea class = "output">${outputter[idx].value}</textarea>`;
+    domString += `<span class = "time">${rightNow}</span>`;
+    domString += `</div>`;
+    domArray.push(domString);
+   printToDom(domArray, 'submitted-cards');
+  })
+}
