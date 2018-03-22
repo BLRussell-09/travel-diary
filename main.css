@@ -1,27 +1,40 @@
 body {
-  display: flex;
+  background: slategray;
 }
-
-
+h1 {
+  text-align: center;
+}
 img {
-  height: 50%;
+  height: 30%;
   width: 50%;
+  border: 1px solid black;
 }
 
-#card-holder {
+#location-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.input {
+  margin-bottom: 1em;
+}
 .card {
+  background: palevioletred;
   margin: 1%;
   padding: 2%;
-  width: 400px;
-  border: 2px solid slategray;
+  width: 26%;
+  border: 2px solid black;
   text-align: center;
 }
 
 .card-button {
   margin: 0 auto;
+}
+
+.output {
+  border: 1px solid slategrey;
+  background: white;
+  font-size: 1.5em;
+  font-weight: 465;
 }
