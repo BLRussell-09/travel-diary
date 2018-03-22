@@ -1,0 +1,27 @@
+body {
+  display: flex;
+}
+
+
+img {
+  height: 50%;
+  width: 50%;
+}
+
+#card-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 1%;
+  padding: 2%;
+  width: 400px;
+  border: 2px solid slategray;
+  text-align: center;
+}
+
+.card-button {
+  margin: 0 auto;
+}
