@@ -2,17 +2,17 @@ console.log('yo')
 const places = [
   {
     location: "Mount Olympus",
-    image: "https://en.wikipedia.org/wiki/Mount_Olympus#/media/File:Mytikas.jpg",
+    images: "https://17447-presscdn-0-13-pagely.netdna-ssl.com/wp-content/uploads/2017/07/Mount-Olympus-e1500861345324.jpg",
     desc: "Olympus was notable in Greek mythology as the home of the Greek gods, on the Mytikas peak."
   },
   {
     location: "Space Mountain",
-    images: "https://en.wikipedia.org/wiki/Space_Mountain#/media/File:Magic_Kingdom_Space_Mountain.jpg",
+    images: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Magic_Kingdom_Space_Mountain.jpg",
     desc: "Olympus was notable in Greek mythology as the home of the Greek gods, on the Mytikas peak."
   },
   {
     location: "Atlantis",
-    images: "https://en.wikipedia.org/wiki/Mount_Olympus#/media/File:Mytikas.jpg",
+    images: "https://www.atlantisbahamas.com/media/N_Homepage/Heros_8_28_17/RoyalTreatment_Hero9_7_17.jpg",
     desc: "Atlantis, is a lost city."
   },
   {
@@ -39,14 +39,16 @@ const printToDom = (domString, divId) => {
 
 const buildDomString = (locationArray) => {
   let domString = '';
-  studentArray.forEach((location) => {
+  locationArray.forEach((location) => {
     domString += `<div class="card">`;
-    domString +=  `<h1>${places.location}</h1>`;
-    domString +=  `<img src="${places.images}" alt=""></br>`;
-    domString +=  `<p>${places.desc}</p>`;
-    domString +=  `<input></input>`;
+    domString +=  `<h1>${location.location}</h1>`;
+    domString +=  `<img src="${location.images}" alt=""></br>`;
+    domString +=  `<p>${location.desc}</p>`;
+    domString +=  `<input></input></br>`;
     domString +=  `<button class="card-button">Submit</button>`;
     domString += `</div>`;
   });
   printToDom(domString, 'location-cards');
 }
+
+buildDomString(places);
