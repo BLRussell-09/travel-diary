@@ -26,8 +26,8 @@ const places = [
     desc: "Mount Doom, also known as Orodruin and Amon Amarth, was a volcano in Mordor where the One Ring was forged and finally destroyed. "
   },
   {
-    location: "Sesame Street",
-    images: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Sesame_Street_sign.svg",
+    location: "Salt Flats",
+    images: "https://media.deseretdigital.com/file/4c14626423?type=jpeg&quality=55&c=15&a=4379240d",
     desc: "I have no idea how to get to this place"
   },
 ]
@@ -53,11 +53,11 @@ const buildDomString = (locationArray) => {
   printToDom(domString, 'location-cards');
 }
 
-
 buildDomString(places);
 let outputter = document.getElementsByClassName("input")
 let domArray = [];
 const allTheButtons = document.getElementsByClassName('card-button')
+
 for (let idx = 0; idx < allTheButtons.length; idx++){
   allTheButtons[idx].addEventListener('click', (e) => {
     let domString = '';
@@ -73,3 +73,9 @@ for (let idx = 0; idx < allTheButtons.length; idx++){
   })
 }
 
+const delButtons = document.getElementsByClassName('del-button')
+for (let idx = 0; idx < delButtons.length; idx++){
+  delButtons[idx].addEventListener('click', (event) => {
+    console.log(event);
+  })
+}
