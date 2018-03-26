@@ -54,28 +54,28 @@ const buildDomString = (locationArray) => {
 }
 
 buildDomString(places);
-let outputter = document.getElementsByClassName("input")
+let outputter = document.getElementsByClassName("input");
+const allTheButtons = document.getElementsByClassName('card-button');
+var newCardIndex = 0;
 let domArray = [];
-const allTheButtons = document.getElementsByClassName('card-button')
 
 for (let idx = 0; idx < allTheButtons.length; idx++){
   allTheButtons[idx].addEventListener('click', (e) => {
     let domString = '';
-    domString += `<div class = "card">`;
+    domString += `<div class = "card" id = "card${newCardIndex}">`;
     domString += `<h1>${places[idx].location}</h1>`;
     domString += `<textarea class = "output">${outputter[idx].value}</textarea>`;
     domString += `<span class = "time">${rightNow}</span></br>`;
-    domString +=  `<button class="del-button">Delete</button>`;
+    domString += `<button class="del-button" >Delete</button>`;
     domString += `</div>`;
     domArray.push(domString);
-   printToDom(domArray, 'submitted-cards');
-
+    printToDom(domArray,"submitted-cards");
+    document.getElementById('card' + newCardIndex).getElementsByClassName('del-button')[0].onClick = deleteThisShit(domArray.length -1 , card + newCardIndex);
+    newCardIndex++;
   })
 }
 
-const delButtons = document.getElementsByClassName('del-button')
-for (let idx = 0; idx < delButtons.length; idx++){
-  delButtons[idx].addEventListener('click', (event) => {
-    console.log(event);
-  })
+deleteThisShit = (arrayIndex, newCardId) => {
+  console.log(arrayIndex);
+  console.log(newCardId);
 }
