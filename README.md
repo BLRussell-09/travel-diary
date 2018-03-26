@@ -5,7 +5,9 @@
 > A single page app, which takes information given about the travel destination and upon submitting, prints the results to the sceeen. 
 
 ## Screenshots
+![alt text](https://raw.githubusercontent.com/BLRussell-09/travel-diary/master/screenshots/t-d1.png)
 
+![alt text](https://raw.githubusercontent.com/BLRussell-09/travel-diary/master/screenshots/t-d2.png)
 
 
 ## Fire It Up!
